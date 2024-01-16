@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health App</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+    }
+
+    .app-container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: #4CAF50;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 10px;
+    }
+
+    .tab-content {
+      display: none;
+      padding: 20px;
+    }
+
+    #home-tab-content {
+      display: block;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <div id="home-tab-content" class="tab-content">
+    <h2>Home</h2>
+    <p>Welcome to the Home tab!</p>
+  </div>
+
+  <div id="explore-tab-content" class="tab-content">
+    <h2>Explore</h2>
+    <p>Discover new health information here!</p>
+  </div>
+
+  <div id="statistics-tab-content" class="tab-content">
+    <h2>Statistics</h2>
+    <p>View your health statistics and trends.</p>
+  </div>
+
+  <div id="profile-tab-content" class="tab-content">
+    <h2>Profile</h2>
+    <p>Manage your health profile settings.</p>
+  </div>
+
+  <div class="tabs">
+    <button onclick="showTab('home-tab-content')">Home</button>
+    <button onclick="showTab('explore-tab-content')">Explore</button>
+    <button onclick="showTab('statistics-tab-content')">Statistics</button>
+    <button onclick="showTab('profile-tab-content')">Profile</button>
+  </div>
+</div>
+
+<script>
+  function showTab(tabName) {
+    var tabs = document.getElementsByClassName("tab-content");
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].style.display = "none";
+    }
+
+    document.getElementById(tabName).style.display = "block";
+  }
+</script>
+
+</body>
+</html>
